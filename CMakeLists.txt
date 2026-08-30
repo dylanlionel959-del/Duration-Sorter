@@ -5,8 +5,10 @@ project(DurationSorter VERSION 1.0.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Incluye las macros de Geode desde la ruta exacta que usa el runner de GitHub Actions
-include("$ENV{GEODE_SDK}/share/geode/cmake/GeodeFile.cmake")
+# El CLI de Geode expone el paquete mediante el prefijo del SDK en el entorno
+list(APPEND CMAKE_PREFIX_PATH "$ENV{GEODE_SDK}")
+
+find_package(Geode REQUIRED)
 
 add_geode_mod(
     DurationSorter
