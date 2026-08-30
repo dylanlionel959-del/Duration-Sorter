@@ -9,7 +9,15 @@ on:
 
 jobs:
   build:
-    uses: geode-sdk/build-geode-mod/.github/workflows/build.yml@main
-    with:
-      target: win android64
-      
+    name: Build Mod
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - uses: geode-sdk/build-geode-mod@main
+        with:
+          target: win android64
+          
