@@ -5,10 +5,12 @@ project(DurationSorter VERSION 1.0.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Carga directamente el archivo de macros comprobado en el runner
-include("$ENV{GEODE_SDK}/cmake/GeodeFile.cmake")
+# Configura explícitamente el directorio del SDK para que find_package lo localice sin fallar
+set(Geode_SDK "$ENV{GEODE_SDK}")
+list(APPEND CMAKE_PREFIX_PATH "${Geode_SDK}")
 
-# add_geode_mod crea el objetivo DurationSorter y configura el mod automáticamente
+find_package(Geode REQUIRED)
+
 add_geode_mod(
     DurationSorter
     "1.0.0"
