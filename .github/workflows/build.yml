@@ -10,11 +10,15 @@ on:
 jobs:
   build:
     name: Build Mod
-    uses: geode-sdk/build-geode-mod/.github/workflows/build.yml@main
-    with:
-      build-config: Release
-      build-win: true
-      build-android-64: true
-      build-android-32: false
-      build-mac: false
-      
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - uses: geode-sdk/build-geode-mod@main
+        with:
+          build-win: true
+          build-android-64: true
+          
