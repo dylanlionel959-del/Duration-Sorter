@@ -1,0 +1,13 @@
+{
+    "geode": "v5.10.1",
+    "gd": {
+        "win": "2.2081",
+        "android": "2.2081",
+        "mac": "2.2081"
+    },
+    "id": "dylanlarez.duration_sorter",
+    "name": "Duration Sorter",
+    "version": "v1.0.0",
+    "developer": "Dylan Larez",
+    "description": "Adds a clock button in the search menu to filter levels by duration (Long to Short / Short to Long)."
+}
