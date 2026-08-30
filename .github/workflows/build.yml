@@ -19,6 +19,10 @@ jobs:
 
       - uses: geode-sdk/build-geode-mod@main
         with:
-          build-win: true
-          build-android-64: true
+          target: win, android64
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Duration-Sorter
+          path: build/*.geode
           
