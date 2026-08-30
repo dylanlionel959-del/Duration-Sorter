@@ -6,7 +6,7 @@
   },
   "id": "dylan.duration_sorter",
   "name": "Duration Sorter",
-  "version": "v1.0.0",
+  "version": "1.0.0",
   "developer": "Dylan",
   "description": "Mod para ordenar por duración."
 }
