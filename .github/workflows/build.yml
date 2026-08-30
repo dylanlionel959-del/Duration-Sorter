@@ -27,20 +27,18 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Setup Geode SDK
-        uses: geode-sdk/setup-geode@v2
-
       - name: Build Mod
-        uses: geode-sdk/build-geode-mod@v2
+        uses: geode-sdk/build-geode-mod@main
         with:
           target: ${{ matrix.config.target }}
+          sdk: main
 
   package:
     name: Package builds
     runs-on: ubuntu-latest
     needs: ['build']
     steps:
-      - uses: geode-sdk/build-geode-mod/combine@v2
+      - uses: geode-sdk/build-geode-mod/combine@main
         id: build
 
       - uses: actions/upload-artifact@v4
