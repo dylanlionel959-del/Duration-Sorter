@@ -9,7 +9,7 @@ class $modify(MenuLayer) {
             return false;
         }
 
-        log::info("Duration Sorter cargado correctamente.");
+        log::info("Duration Sorter inicializado correctamente.");
         return true;
     }
 };
