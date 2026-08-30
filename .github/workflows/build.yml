@@ -12,6 +12,7 @@ jobs:
     name: Build Mod
     uses: geode-sdk/build-geode-mod/.github/workflows/build.yml@main
     with:
+      build-config: Release
       build-win: true
       build-android-64: true
       build-android-32: false
