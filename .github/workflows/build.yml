@@ -19,5 +19,6 @@ jobs:
 
       - uses: geode-sdk/build-geode-mod@main
         with:
-          target: win android64
+          target-win: true
+          target-android-64: true
           
