@@ -31,7 +31,6 @@ jobs:
         uses: geode-sdk/build-geode-mod@main
         with:
           target: ${{ matrix.config.target }}
-          sdk: main
 
   package:
     name: Package builds
