@@ -1,46 +1,49 @@
-#include <Geode/Geode.cpp>
+#include <Geode/Geode.hpp>
 #include <Geode/modify/LevelBrowserLayer.hpp>
 
 using namespace geode::prelude;
+
+// Declaramos la función externa o clase que está en star.cpp
+namespace StarDurationFilter {
+    void applyLongRatedFilter(GJSearchObject* searchObj);
+}
 
 class $modify(MyLevelBrowserLayer, LevelBrowserLayer) {
     bool init(GJSearchObject* p0) {
         if (!LevelBrowserLayer::init(p0)) return false;
 
-        // Obtenemos el tamaño de la pantalla para posicionar el botón
         auto winSize = CCDirector::sharedDirector()->getWinSize();
-
-        // Creamos un menú flotante en la interfaz
         auto menu = CCMenu::create();
 
-        // Creamos el botón usando tu icono de estrellas desde la carpeta resources
+        // Creamos el botón con tu icono de estrellas desde la carpeta resources
         auto starButton = CCMenuItemSpriteExtra::create(
             CCSprite::create("star_icon.png"_spr),
             this,
             menu_selector(MyLevelBrowserLayer::onDurationSortClicked)
         );
 
-        // Posicionamos el botón en la esquina superior izquierda (puedes ajustarlo a tu gusto)
         starButton->setPosition({35, winSize.height - 45});
         
         menu->addChild(starButton);
         menu->setPosition({0, 0});
-        
-        // Añadimos el menú a la capa del navegador de niveles
         this->addChild(menu, 100);
 
         return true;
     }
 
-    // Función que se ejecuta al presionar el botón de la estrella
     void onDurationSortClicked(CCObject* sender) {
+        // Llamamos a la lógica de filtrado cuando hacen clic
+        if (this->m_searchObject) {
+            StarDurationFilter::applyLongRatedFilter(this->m_searchObject);
+        }
+
         FLAlertLayer::create(
             "Duration Sorter",
-            "¡Filtro de duración activado con éxito!",
+            "¡Filtro de niveles rateados largos aplicado!",
             "OK"
         )->show();
-
-        // Aquí puedes implementar más adelante la lógica para reordenar 
-        // o filtrar los niveles según su duración en el buscador.
+        
+        // Opcional: recargar la capa de niveles para reflejar los cambios de búsqueda
+        // this->loadLevels(this->m_searchObject);
     }
 };
