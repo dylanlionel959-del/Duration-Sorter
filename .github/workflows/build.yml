@@ -31,7 +31,7 @@ jobs:
           submodules: false
 
       - name: Build Mod
-        uses: ./.github/actions/build-mod
+        uses: geode-sdk/build-geode-mod@main
         id: build
         with:
           target: ${{ matrix.config.target }}
