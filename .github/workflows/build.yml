@@ -32,6 +32,13 @@ jobs:
 
       - name: Build Mod
         uses: geode-sdk/build-geode-mod@main
+        id: build
         with:
           target: ${{ matrix.config.target }}
           sdk: v5.11.2
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Duration-Sorter-${{ matrix.config.target }}
+          path: ${{ steps.build.outputs.build-output }}
