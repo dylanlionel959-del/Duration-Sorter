@@ -1,0 +1,27 @@
+# Directorios de compilación de CMake y Geode
+build/
+out/
+dist/
+*.geode
+
+# Caché y archivos temporales de CMake
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake-install.cmake
+cmake_install.cmake
+install_local.cmake
+install_manifest.txt
+*.cmake
+!CMakeLists.txt
+
+# Archivos de entorno y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Caché local del SDK y sccache
+.sccache/
+.ninja_*
