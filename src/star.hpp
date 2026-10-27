@@ -2,6 +2,6 @@
 #include <Geode/Geode.hpp>
 
 namespace StarDurationFilter {
-    // Abre la siguiente categoría de duración rateada (de más larga a más corta)
-    void openNextLengthRated();
+    // Una sola lista de rateados: de XL (infinito) a Tiny (0 segundos)
+    void openSortedByLength();
 }
