@@ -27,14 +27,6 @@ class $modify(MyLevelBrowserLayer, LevelBrowserLayer) {
     }
 
     void onDurationSortClicked(CCObject* sender) {
-        if (this->m_searchObject) {
-            StarDurationFilter::applyLongRatedFilter(this->m_searchObject);
-        }
-
-        FLAlertLayer::create(
-            "Duration Sorter",
-            "¡Filtro de niveles rateados largos aplicado!",
-            "OK"
-        )->show();
+        StarDurationFilter::openNextLengthRated();
     }
 };
