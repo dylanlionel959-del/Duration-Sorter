@@ -27,6 +27,6 @@ class $modify(MyLevelBrowserLayer, LevelBrowserLayer) {
     }
 
     void onDurationSortClicked(CCObject* sender) {
-        StarDurationFilter::openNextLengthRated();
+        StarDurationFilter::openSortedByLength();
     }
 };
