@@ -10,7 +10,6 @@ class $modify(MyLevelBrowserLayer, LevelBrowserLayer) {
             return false;
         }
 
-        // Apply the sorting logic cleanly without causing compiler conflicts
         StarDurationFilter::applyDurationSort(p0);
 
         return true;
