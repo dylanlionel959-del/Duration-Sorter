@@ -2,5 +2,6 @@
 #include <Geode/Geode.hpp>
 
 namespace StarDurationFilter {
-    void applyLongRatedFilter(GJSearchObject* searchObj);
+    // Abre la siguiente categoría de duración rateada (de más larga a más corta)
+    void openNextLengthRated();
 }
