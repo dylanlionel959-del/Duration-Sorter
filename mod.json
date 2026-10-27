@@ -1,12 +1,16 @@
 {
   "geode": "5.11.2",
+  "gd": {
+    "win": "2.2081",
+    "android": "2.2081"
+  },
   "id": "maxr3.duration_sorter",
   "name": "Duration Sorter",
-  "version": "1.0.0",
+  "version": "v1.0.0",
   "developer": "Maxr3",
   "description": "A mod to sort levels by duration in Geometry Dash.",
-  "dependencies": [],
-  "incompatibilities": [],
-  "settings": {},
-  "icon": "icon.png"
+  "icon": "icon.png",
+  "resources": {
+    "sprites": ["resources/*.png"]
+  }
 }
