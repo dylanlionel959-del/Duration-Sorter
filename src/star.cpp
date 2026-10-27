@@ -11,13 +11,13 @@ namespace {
         const char* name;
     };
 
-    // De más larga a más corta (solo modo Clásico)
+    // Modo Clásico: de "infinito" (XL) a 0 segundos (Tiny)
     constexpr LengthStep STEPS[] = {
-        {"4", "XL"},
+        {"4", "XL (infinito)"},
         {"3", "Long"},
         {"2", "Medium"},
         {"1", "Short"},
-        {"0", "Tiny"},
+        {"0", "Tiny (0 segundos)"},
     };
     constexpr int STEP_COUNT = sizeof(STEPS) / sizeof(STEPS[0]);
 
