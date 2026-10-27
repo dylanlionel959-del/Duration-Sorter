@@ -6,7 +6,7 @@
   },
   "id": "maxr3.duration_sorter",
   "name": "Duration Sorter",
-  "version": "v1.0.0",
+  "version": "v1.0.1",
   "developer": "Maxr3",
   "description": "A mod to sort levels by duration in Geometry Dash.",
   "icon": "icon.png",
