@@ -1,17 +1,20 @@
 cmake_minimum_required(VERSION 3.21)
-
-project(DurationSorter VERSION 1.0.0 LANGUAGES CXX)
-
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_OSX_ARCHITECTURES "arm64;x86_64")
+set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
-# Indicamos a CMake la ruta exacta del SDK que prepara la acción oficial
-set(Geode_DIR "$ENV{GEODE_SDK}")
-find_package(Geode REQUIRED)
+project(DurationSorter VERSION 1.0.0)
 
-add_geode_mod(
-    DurationSorter
-    "1.0.0"
-    src/main.cpp
-    src/star.cpp
-)
+file(GLOB SOURCES src/*.cpp)
+add_library(${PROJECT_NAME} SHARED ${SOURCES})
+
+if (NOT DEFINED ENV{GEODE_SDK})
+    message(FATAL_ERROR "Unable to find Geode SDK! Define the GEODE_SDK environment variable.")
+else()
+    message(STATUS "Found Geode: $ENV{GEODE_SDK}")
+endif()
+
+add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
+
+setup_geode_mod(${PROJECT_NAME})
